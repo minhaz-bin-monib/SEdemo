@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.character {
+    position: relative;
+    transform-origin: 100% 100%;
+    animation: character 2s ease-in-out infinite alternate;
+}
+
+.head,
+.body,
+.body-up,
+.eyes,
+.iris,
+.eyes::before,
+.ribbon-left,
+.ribbon-right  {
+    position: absolute;
+}
+
+.head, 
+.eyes,
+.ears,
+.feet,
+.iris,
+.eyes::before,
+.ribbon-left,
+.ribbon-right {
+    border: 2px solid #333;
+    border-radius: 50%;
+}
+
+.head {
+    background: #f3cbcb;
+    width: 160px;
+    height: 160px;
+    z-index: 10;
+}
+
+.ribbon-left,
+.ribbon-right {
+    background: #333;
+    width: 70px;
+    height: 30px;
+}
+
+.ribbon-left {
+    transform: rotate(-20deg);
+}
+
+.ribbon-right {
+    transform: rotate(20deg);
+}
+
+
+.eyes {
+    background: #333;
+    width: 30px;
+    height: 30px;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.eyes::before {
+    content: "";
+    background: #f3cbcb;
+    width: 30px;
+    height: 30px;
+    top: -20px;
+    z-index: 10;
+    animation: eyes 2.5s infinite;
+}
+
+.eye-left {
+    left: 30px;
+}
+
+.eye-right {
+    right: 30px;
+}
+
+.iris {
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    animation: iris 2.5s infinite;
+}
+
+@keyframes iris {
+    100% {opacity: 0}
+}
+.nnn{
+    text-align: center;
+    font-weight: 700;
+}
+
+.body {
+    background: #e04a4a;
+    width: 150px;
+    height: 100px;
+    top: 110px;
+    left: 5px;
+    border-radius: 50%;
+    box-shadow: 
+                0 50px 0 10px #e04a4a,
+                0 100px 0 20px #e04a4a;
+}
+
+/*keyframes*/
+
+@keyframes eyes {
+    100% {transform: translateY(20px);}
+}
+
+@keyframes character {
+    0% {transform: rotate(-5deg);}
+    100% {transform: rotate(5deg);}
+}
